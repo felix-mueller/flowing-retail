@@ -7,15 +7,11 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<spring.boot.version>2.0.2.RELEASE</spring.boot.version>
+		<spring.boot.version>2.1.2.RELEASE</spring.boot.version>
 
-		<camunda.version>7.10.0</camunda.version>
-		<!-- 
-		Adjust if you want to use Enterprise Edition of Camunda:
-		<camunda.version>7.10.0-ee</camunda.version>
-		Make sure you also switch to the ee webapp dependency below
-		-->
-		<camunda.spring.boot.version>3.1.0</camunda.spring.boot.version>
+		<camunda.version>7.11.3-ee</camunda.version>
+
+		<camunda.spring.boot.version>3.3.1</camunda.spring.boot.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -51,14 +47,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.camunda.bpm.springboot</groupId>
-			<artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
-	        <!-- 
-		    	Adjust if you want to use Enterprise Edition of Camunda:
-	        	<artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
-	    		Make sure you also use an EE version of Camunda - see above
-	        -->
+			<artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
 			<version>${camunda.spring.boot.version}</version>
-		</dependency>		
+		</dependency>
 		<dependency>
 		  <groupId>org.camunda.bpm</groupId>
 		  <artifactId>camunda-external-task-client</artifactId>
@@ -67,12 +58,12 @@
 	    <dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-jdbc</artifactId>
-	    </dependency>		
+	    </dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
@@ -82,7 +73,7 @@
 			<artifactId>httpmime</artifactId>
 		</dependency>
 
-		<!-- 
+		<!--
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
@@ -92,7 +83,7 @@
 			<groupId>com.netflix.hystrix</groupId>
 			<artifactId>hystrix-core</artifactId>
 			<version>1.5.12</version>
-		</dependency>	
+		</dependency>
 	</dependencies>
 
 	<repositories>
@@ -106,8 +97,8 @@
     	<plugins>
 			 <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>              
-                <configuration>                         
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
     				  <mainClass>io.flowing.retail.payment.PaymentRestApplication</mainClass>
                 </configuration>
              </plugin>
@@ -123,5 +114,5 @@
 			    </executions>
 	        </plugin>
     	</plugins>
-    </build>	
+    </build>
 </project>
